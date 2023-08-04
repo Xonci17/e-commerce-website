@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Webpage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-page-color">
+    <!-- Header -->
+    <header class="py-4 border-b-2 border-black pb-5 sm:flex-col px-4 sm:px-0">
+      <div class="container mx-auto flex items-center justify-between">
+        <div class="flex items-center">
+          <img src="./assets/logo.svg" alt="Logo" class="h-8" />
+          <p class="text-black pl-4 text-3xl font-bold sm:mx-auto sm:w-full">
+            VooDoo<br />Test
+          </p>
+        </div>
+        <div class="flex items-center">
+          <button
+            id="cart-icon"
+            class="mr-4 transition-transform hover:scale-110"
+          >
+            <img src="./assets/cart-icon.svg" alt="Cart" />
+          </button>
+          <button
+            class="bg-black text-white rounded px-4 py-1 hover:bg-gray-700 hover:shadow-lg transition-all"
+          >
+            Sign-up
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Disclosure -->
+    <div
+      class="container mx-auto bg-black text-white py-4 px-8 sm:px-8 rounded cursor-pointer mt-9"
+      id="disclosure"
+    >
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <div class="flex items-center">
+            <img
+              src="./assets/alert-circle.svg"
+              alt="Logo"
+              class="h-6 sm:h-8"
+            />
+            <p class="text-white pl-2 text-sm sm:text-base font-bold">ALPHA</p>
+          </div>
+          <span class="ml-2 sm:ml-6 text-sm sm:text-base">Important info</span>
+        </div>
+        <img
+          class="disclosure-open chevron"
+          src="./assets/chevron-down.svg"
+          alt=""
+        />
+      </div>
+      <p class="hidden mt-4 sm:mt-10 hidden-info" id="hidden-info">
+        Hidden information content: User can click and see more info.
+      </p>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div
+      class="cart-drawer lg:flex flex-col items-stretch hidden sm:w-full md:w-1/2 lg:w-1/4 px-4 sm:px-0"
+      id="cart-drawer"
+    >
+      <div class="cart-header py-4 sm:px-8 flex items-center justify-between">
+        <h3 class="sm:text-xl font-bold">Shopping Cart</h3>
+        <button class="text-white" id="close-cart-drawer">
+          <img
+            src="./assets/close-icon.svg"
+            alt="Close"
+            class="sm:h-6 sm:w-6"
+          />
+        </button>
+      </div>
+      <div class="cart-items flex-grow px-8 py-4 overflow-y-auto">
+        <!-- Cart items will be dynamically added here using JavaScript -->
+      </div>
+      <div class="cart-total px-8 py-4 total">
+        <h4 class="font-bold">Total: <span id="total-price">$0.00</span></h4>
+      </div>
+    </div>
+
+    <!-- Product List -->
+    <div
+      class="container mx-auto my-8 grid grid-cols-1 md:grid-cols-4 gap-6 px-4 sm:px-0"
+      id="product-list"
+    >
+      <!-- Product cards will be dynamically added here using JavaScript -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="container mx-auto mt-10 mb-32 px-4 px-4">
+      <!-- Pagination buttons will be dynamically added here using JavaScript -->
+      <div class="pagination">
+        <!-- Pagination elements will be inserted here by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Pop-up Message -->
+    <div
+      class="pop-up-message hidden bg-green-500 text-white px-4 py-2 rounded absolute top-2 right-2"
+    >
+      Product added to cart!
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-2 sm:py-4 border-t-2 border-black bg-white text-black">
+      <!-- Footer content for mobile -->
+      <div class="sm:hidden px-4">
+        <ul class="text-black text-1xl font-bold mb-10 mt-10">
+          <li class="mb-2">FAQ</li>
+          <li class="mb-2">RETURNS</li>
+          <li class="mb-2">CONTACT</li>
+        </ul>
+        <ul class="text-black text-1xl font-bold mb-10">
+          <li class="mb-2">TERMS & CONDITIONS</li>
+          <li class="mb-2">PRIVACY POLICY</li>
+          <li class="mb-2">COOKIE POLICY</li>
+          <li class="mb-2">COOKIE SETTINGS</li>
+        </ul>
+        <ul class="text-black text-1xl font-bold mb-10">
+          <li class="mb-2">ABOUT SECOND CHANCE</li>
+          <li class="mb-2">CAREER</li>
+          <li class="mb-2">FACEBOOK</li>
+          <li class="mb-2">INSTAGRAM</li>
+        </ul>
+        <div class="text-black text-1xl font-bold mb-10">
+          <img src="./assets/big-logo.svg" alt="Logo" class="w-24 mx-auto" />
+        </div>
+      </div>
+
+      <!-- Footer content for PC -->
+      <div
+        class="hidden container mx-auto sm:flex sm:flex-row sm:space-x-8 sm:justify-around"
+      >
+        <div class="text-black text-1xl font-bold">
+          <img src="./assets/big-logo.svg" alt="Logo" class="" />
+        </div>
+        <ul class="text-black text-1xl font-bold">
+          <li class="mb-2">FAQ</li>
+          <li class="mb-2">RETURNS</li>
+          <li class="mb-2">CONTACT</li>
+        </ul>
+        <ul class="text-black text-1xl font-bold">
+          <li class="mb-2">TERMS & CONDITIONS</li>
+          <li class="mb-2">PRIVACY POLICY</li>
+          <li class="mb-2">COOKIE POLICY</li>
+          <li class="mb-2">COOKIE SETTINGS</li>
+        </ul>
+        <ul class="text-black text-1xl font-bold">
+          <li class="mb-2">ABOUT SECOND CHANCE</li>
+          <li class="mb-2">CAREER</li>
+          <li class="mb-2">FACEBOOK</li>
+          <li class="mb-2">INSTAGRAM</li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./main.js"></script>
+  </body>
+</html>

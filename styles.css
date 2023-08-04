@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #fcf7e6;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.bg-page-color {
+  background-color: #fcf7e6;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.pagination-item {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.pagination-item.current-page {
+  background-color: black;
+  color: #fcf7e6;
+}
+
+/* Add custom CSS for chevron-down transition */
+
+#disclosure .chevron {
+  transition: transform 0.4s ease;
+}
+
+.disclosure-open .chevron {
+  transform: rotate(180deg);
+}
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  min-width: 30%; /* The cart will take up 30% of the screen on mobile devices */
+  background-color: #1e1e1e;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+/* On larger screens, the cart width will be adjusted to 25% of the screen */
+@media (min-width: 768px) {
+  .cart-drawer {
+    min-width: 25%;
+  }
+}
+
+/* On even larger screens, the cart width will be adjusted to 20% of the screen */
+@media (min-width: 1024px) {
+  .cart-drawer {
+    min-width: 20%;
+  }
+}
+
+/* On extra large screens, the cart will take up 25% of the screen again */
+@media (min-width: 1280px) {
+  .cart-drawer {
+    min-width: 25%;
+  }
+}
+
+.cart-drawer.open {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.cart-header:before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  height: 1px;
+  width: 90%; /* or 100px */
+  border-bottom: 1px solid #fcf7e6;
+}
+
+.cart-header h3 {
+  color: #fcf7e6;
+}
+
+.cart-items {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.cart-total {
+  border-color: #fcf7e6;
+  color: #fcf7e6;
+}
+
+.total {
+  position: relative;
+}
+
+.total:before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  top: 10px;
+  height: 1px;
+  width: 90%; /* or 100px */
+  border-bottom: 1px solid #fcf7e6;
+}
+
+@media (max-width: 768px) {
+  .mobile-text {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+}
+
+.pop-up-message {
+  animation: fadeInOut 2s ease;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 9999; /* Ensure it appears above other elements */
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
